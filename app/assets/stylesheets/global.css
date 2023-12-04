@@ -1,0 +1,14 @@
+.congrats, .scorn {
+  border: solid black 4px;
+  padding: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.congrats {
+  background-color: limegreen;
+}
+
+.scorn {
+  background-color: firebrick;
+}
