@@ -1,2 +1,3 @@
 <h1>Edit Kitten #<%= @kitten.id %></h1>
-<%= render "kittens/form", kitten: @kitten %>
+<%= render "kittens/form", kitten: @kitten %><br>
+<%= button_to "Delete Kitten", @kitten, method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } } %>

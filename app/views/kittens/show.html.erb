@@ -2,3 +2,4 @@
 <p>Age: <%= @kitten.age %></p>
 <p>Cuteness: <%= @kitten.cuteness %></p>
 <p>Softness: <%= @kitten.softness %></p>
+<%= button_to "Delete Kitten", @kitten, method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } } %>

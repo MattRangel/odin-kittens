@@ -1,2 +1,5 @@
-<p><b><%= link_to(kitten.name, kitten) %></b><br>
-Age: <i><%= kitten.age %></i> | Cuteness: <i><%= kitten.cuteness %></i> | Softness: <i><%= kitten.softness %></i></p>
+<p>
+<b><%= link_to(kitten.name, kitten) %></b> | 
+<%= link_to "Delete", kitten_path(kitten), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %><br>
+Age: <i><%= kitten.age %></i> | Cuteness: <i><%= kitten.cuteness %></i> | Softness: <i><%= kitten.softness %></i>
+</p>
