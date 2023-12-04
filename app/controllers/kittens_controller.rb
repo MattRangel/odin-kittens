@@ -15,8 +15,9 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
     @kitten.attributes = kitten_params
     if @kitten.save
-      redirect_to @kitten
+      redirect_to @kitten, flash: { congrats: "Successfully updated!" }
     else
+      flash[:scorn] = "You put a bad value!"
       render :edit, status: :unprocessable_entity
     end
   end
@@ -28,8 +29,9 @@ class KittensController < ApplicationController
   def create
     @kitten = Kitten.create(kitten_params)
     if @kitten.save
-      redirect_to @kitten
+      redirect_to @kitten, flash: { congrats: "Successfully created!" }
     else
+      flash[:scorn] = "You put a bad value!"
       render :new, status: :unprocessable_entity
     end
   end
@@ -38,7 +40,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
     @kitten.destroy
 
-    redirect_to root_path
+    redirect_to root_path, flash: { congrats: "Successfully destroyed!" }
   end
 
   private
